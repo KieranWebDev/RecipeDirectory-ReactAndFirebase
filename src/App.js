@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 //styles
 import './App.css';
 
@@ -8,10 +8,13 @@ import Create from '../src/pages/create/Create';
 import Recipe from '../src/pages/recipe/Recipe';
 import Search from '../src/pages/search/Search';
 
+//components
+import Navbar from './components/navbar/Navbar';
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
