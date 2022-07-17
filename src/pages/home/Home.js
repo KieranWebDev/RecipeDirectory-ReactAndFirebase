@@ -1,5 +1,9 @@
 import { useFetch } from '../../hooks/useFetch.js';
 
+//components
+import RecipeList from '../../components/RecipeList/RecipeList';
+
+//styles
 import './home.css';
 export default function Home() {
   const {
@@ -12,8 +16,7 @@ export default function Home() {
     <div className="home">
       {error && <p className="error">Sorry, could not get that data</p>}
       {isPending && <p className="loading">Loading...</p>}
-      {recipes &&
-        recipes.map((recipe) => <h2 key={recipe.id}>{recipe.title}</h2>)}
+      {recipes && <RecipeList recipes={recipes} />}
     </div>
   );
 }
