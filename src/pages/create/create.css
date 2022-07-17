@@ -37,3 +37,11 @@
     width: 100%;
     box-sizing: border-box;
   } */
+
+.ingredients {
+  display: flex;
+  align-items: center;
+}
+.ingredients button {
+  margin: 0 0 0 10px;
+}

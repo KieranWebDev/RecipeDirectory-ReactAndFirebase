@@ -58,6 +58,13 @@ export default function Create() {
             </button>
           </div>
         </label>
+        {/* maps through ing and add , to each when displayed */}
+        <p>
+          Current ingredients:
+          {ingredients.map((i) => (
+            <em key={i}>{i}, </em>
+          ))}
+        </p>
 
         <label>
           <span>Recipe method:</span>
