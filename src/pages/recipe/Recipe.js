@@ -10,15 +10,19 @@ export default function Recipe() {
 
   const { data: recipe, isPending, error } = useFetch(url);
   return (
-    <div>
+    <div className="recipe">
       {isPending && <p className="loading">loading...</p>}
       {error && <p className="error">sorry, no data</p>}
       {recipe && (
         <div>
-          <h1> {recipe.title}</h1>
-          <h3>{recipe.ingredients}</h3>
-          <p>{recipe.method}</p>
-          <p>{recipe.cookingTime}</p>
+          <h2 className="page-title"> {recipe.title}</h2>
+          <p>Takes {recipe.cookingTime} to cook.</p>
+          <ul>
+            {recipe.ingredients.map((ing) => (
+              <li key={ing}>{ing}</li>
+            ))}
+          </ul>
+          <p className="recipe">{recipe.method}</p>
         </div>
       )}
     </div>
