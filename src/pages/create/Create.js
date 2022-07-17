@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useFetch } from '../../hooks/useFetch';
+import { useNavigate } from 'react-router-dom';
 
 //styles
 import './create.css';
@@ -13,7 +14,10 @@ export default function Create() {
 
   //custom GET/POST hook
   const url = `http://localhost:3000/recipes`;
-  const { postData } = useFetch(url, 'POST');
+  const { postData, data } = useFetch(url, 'POST');
+
+  //browswerRouter hook
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,6 +29,13 @@ export default function Create() {
     });
     console.log(title, method, cookingTime, ingredients);
   }
+
+  //redirect user to homepage when we get response
+  useEffect(() => {
+    if (data) {
+      navigate('/');
+    }
+  }, [data, navigate]);
 
   function handleAdd(e) {
     e.preventDefault();
