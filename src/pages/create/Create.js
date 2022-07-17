@@ -7,10 +7,27 @@ export default function Create() {
   const [title, setTitle] = useState('');
   const [method, setMethod] = useState('');
   const [cookingTime, setCookingTime] = useState('');
+  const [newIngredient, setNewIngredient] = useState('');
+  const [ingredients, setIngredients] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(title, method, cookingTime);
+    console.log(title, method, cookingTime, ingredients);
+  }
+
+  function handleAdd(e) {
+    e.preventDefault();
+    //.trim - removes any whitespace from string
+    const ing = newIngredient.trim();
+    // checks to see if there is a repeat value of ingredients. If there isn't then code will fire.
+    if (ing && !ingredients.includes(ing)) {
+      // spreads previous ingredients and adds new ingredient to array
+      //this also works:
+      // setIngredients([...prevIngredients, ing])
+      setIngredients((prevIngredients) => [...prevIngredients, ing]);
+    }
+
+    setNewIngredient('');
   }
 
   return (
@@ -28,6 +45,20 @@ export default function Create() {
         />
 
         {/* ingredients go here */}
+        <label>
+          <span>Recipe Ingredients:</span>
+          <div className="ingredients">
+            <input
+              type="text"
+              onChange={(e) => setNewIngredient(e.target.value)}
+              value={newIngredient}
+            />
+            <button className="button" onClick={handleAdd}>
+              Add
+            </button>
+          </div>
+        </label>
+
         <label>
           <span>Recipe method:</span>
         </label>
