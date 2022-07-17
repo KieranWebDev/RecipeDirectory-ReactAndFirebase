@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useFetch } from '../../hooks/useFetch';
 
 //styles
 import './create.css';
@@ -10,8 +11,18 @@ export default function Create() {
   const [newIngredient, setNewIngredient] = useState('');
   const [ingredients, setIngredients] = useState([]);
 
+  //custom GET/POST hook
+  const url = `http://localhost:3000/recipes`;
+  const { postData } = useFetch(url, 'POST');
+
   function handleSubmit(e) {
     e.preventDefault();
+    postData({
+      title,
+      method,
+      cookingTime: `${cookingTime} minutes`,
+      ingredients,
+    });
     console.log(title, method, cookingTime, ingredients);
   }
 
