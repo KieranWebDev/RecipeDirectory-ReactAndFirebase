@@ -10,11 +10,14 @@ import Search from '../src/pages/search/Search';
 
 //components
 import Navbar from './components/navbar/Navbar';
+import ThemeSelector from './components/themeSelector.js/ThemeSelector';
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
+        <ThemeSelector />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
