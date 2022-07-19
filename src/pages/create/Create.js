@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
-import { useFetch } from '../../hooks/useFetch';
+// import { useEffect, useState } from 'react';
+import { useState } from 'react';
+// import { useFetch } from '../../hooks/useFetch';
 import { useNavigate } from 'react-router-dom';
+import { projectFireStore } from '../../assets/firebase/config';
 
 //styles
 import './create.css';
@@ -13,29 +15,34 @@ export default function Create() {
   const [ingredients, setIngredients] = useState([]);
 
   //custom GET/POST hook
-  const url = `http://localhost:3000/recipes`;
-  const { postData, data } = useFetch(url, 'POST');
+  // const url = `http://localhost:3000/recipes`;
+  // const { postData, data } = useFetch(url, 'POST');
 
   //browswerRouter hook
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    postData({
+    const doc = {
       title,
       method,
       cookingTime: `${cookingTime} minutes`,
       ingredients,
-    });
-    console.log(title, method, cookingTime, ingredients);
+    };
+    try {
+      await projectFireStore.collection('recipes').add(doc);
+      navigate('/');
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   //redirect user to homepage when we get response
-  useEffect(() => {
-    if (data) {
-      navigate('/');
-    }
-  }, [data, navigate]);
+  // useEffect(() => {
+  //   if (data) {
+  //     navigate('/');
+  //   }
+  // }, [data, navigate]);
 
   function handleAdd(e) {
     e.preventDefault();
