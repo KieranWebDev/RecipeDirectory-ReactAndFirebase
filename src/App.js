@@ -11,10 +11,13 @@ import Search from '../src/pages/search/Search';
 //components
 import Navbar from './components/navbar/Navbar';
 import ThemeSelector from './components/themeSelector.js/ThemeSelector';
+//hooks
+import { useTheme } from './hooks/useTheme';
 
 function App() {
+  const { mode } = useTheme();
   return (
-    <div className="App">
+    <div className={`App ${mode}`}>
       <BrowserRouter>
         <Navbar />
         <ThemeSelector />
