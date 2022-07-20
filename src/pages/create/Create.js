@@ -13,6 +13,7 @@ export default function Create() {
   const [cookingTime, setCookingTime] = useState('');
   const [newIngredient, setNewIngredient] = useState('');
   const [ingredients, setIngredients] = useState([]);
+  const [tagLine, setTagLine] = useState('');
 
   //custom GET/POST hook
   // const url = `http://localhost:3000/recipes`;
@@ -28,6 +29,7 @@ export default function Create() {
       method,
       cookingTime: `${cookingTime} minutes`,
       ingredients,
+      tagLine,
     };
     try {
       await projectFireStore.collection('recipes').add(doc);
@@ -70,6 +72,15 @@ export default function Create() {
           type="text"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
+          required
+        />
+        <label>
+          <span>Recipe tagline</span>
+        </label>
+        <input
+          type="text"
+          onChange={(e) => setTagLine(e.target.value)}
+          value={tagLine}
           required
         />
 
