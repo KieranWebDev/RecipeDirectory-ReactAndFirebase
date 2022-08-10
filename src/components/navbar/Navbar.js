@@ -4,7 +4,7 @@ import { useTheme } from '../../hooks/useTheme';
 import './navbar.css';
 
 //components
-import SearchBar from '../searchBar/Searchbar';
+// import SearchBar from '../searchBar/Searchbar';
 
 export default function Navbar() {
   const { color } = useTheme();
@@ -15,7 +15,7 @@ export default function Navbar() {
         <Link className="logo" to="/">
           <h1> Cooking Ninja</h1>
         </Link>
-        <SearchBar />
+        {/* <SearchBar /> */}
         <Link to="/create">Create Recipe</Link>
       </nav>
     </div>
