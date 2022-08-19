@@ -13,7 +13,10 @@ export default function Navbar() {
     <div className="navbar" style={{ background: color }}>
       <nav>
         <Link className="logo" to="/">
-          <h1> Cooking Ninja</h1>
+          <h1>
+            {' '}
+            Kieran's <i>(mostly)</i> edible recipes
+          </h1>
         </Link>
         {/* <SearchBar /> */}
         <Link to="/create">Create Recipe</Link>
