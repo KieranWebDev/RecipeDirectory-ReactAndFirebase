@@ -36,11 +36,11 @@ export default function Recipe() {
     return () => unsub();
   }, [id]);
 
-  function handleClick() {
-    projectFireStore.collection('recipes').doc(id).update({
-      title: 'Very basic edit functionality',
-    });
-  }
+  // function handleClick() {
+  //   projectFireStore.collection('recipes').doc(id).update({
+  //     title: 'Very basic edit functionality',
+  //   });
+  // }
 
   return (
     <>
