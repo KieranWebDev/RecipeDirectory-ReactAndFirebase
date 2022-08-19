@@ -7,7 +7,7 @@
 
 ## Project Details
 
-- A recipe create site that I created following a [Net Ninja course]("https://www.udemy.com/course/build-web-apps-with-react-firebase/").  The front end was build with React and React Router, while initially Json Server was used to replicate a back-end which was later swapped out with Firebase. 
+- A recipe create site that I created following a <a href="https://www.udemy.com/course/build-web-apps-with-react-firebase/">Net Ninja course</a>.  The front end was build with React and React Router, while initially Json Server was used to replicate a back-end which was later swapped out with Firebase. 
 
     <table>
 	    <tr>
