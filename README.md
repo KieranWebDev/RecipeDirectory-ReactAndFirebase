@@ -46,7 +46,12 @@
 
 - I was able to get some practice with using the UseContext and UseReducer Hooks for the color theme selectors. Although a simple example, it helped me to gained a deeper understanding of how these hooks work and I look forward to learning more.
 
+## Tech Stack
 
+- React
+- React Router
+- Json Server
+- Firebase
 
 
 
