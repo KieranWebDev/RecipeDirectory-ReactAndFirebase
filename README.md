@@ -1,71 +1,36 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ <h1 align="center">Recipe Creator Site</h1>
 
-## Available Scripts
+<h3 align="center">
+	View The Website <a href='https://untroddenapp.netlify.app/'>here</a>
+</h3>
 
-In the project directory, you can run:
+## Project Details
 
-### `npm start`
+- A recipe create site that I created following a [Net Ninja course]("https://www.udemy.com/course/build-web-apps-with-react-firebase/").  The front end was build with React and React Router, while initially Json Server was used to replicate a back-end which was later swapped out with Firebase. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## What I learned and the challenges faced 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Coding along with this project offered a great opportunity to familiarise myself with some new concepts such as useContext and UseReducer whilst also getting some reps in with more familiar concepts such as useState and UseEffect as well as React Router. 
 
-### `npm test`
+- This project uses a custom UseFetch Hook which was later refactored to also handle Post requests. I can see how convenient and reuseable custom hooks can be i.e. solve the problem once and then reuse the component. Although the custom hook was no longer used once the project backend was switched to Firebase, I left it in the codebase as a learning point and as I will probably be able to reuse it in later projects.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-This was my first experience with using a back-end as a Service provider like Firebase and I found it a relatively stress-free experience. I was surprised at how easy and seamless it was to create tables. Although the syntax used to fetch data from Firebase differs from that used with what I’m familiar with thus far, it seems to follow a similar logic, and thus I didn't feel like I had to learn a completely new concept. Although I’m just dipping my toes into it at the moment, I look forward to learning more. 
 
-### `npm run build`
+- More practice with creating forms although I have since used form libraries such as React Form Hook and find them much easier to use than conventional React forms.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Lost of practice and reps using map to iterate through data,  which is always good. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Gained more confidence with using React Router.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- I was able to get some practice with using the UseContext and UseReducer Hooks for the color theme selectors. Although a simple example, it helped me to gained a deeper understanding of how these hooks work and I look forward to learning more.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# RecipeDirectory-ReactAndFirebase
