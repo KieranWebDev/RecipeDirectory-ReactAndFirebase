@@ -3,6 +3,7 @@ import { useState } from 'react';
 // import { useFetch } from '../../hooks/useFetch';
 import { useNavigate } from 'react-router-dom';
 import { projectFireStore } from '../../assets/firebase/config';
+import { Helmet } from 'react-helmet';
 
 //styles
 import './create.css';
@@ -62,69 +63,76 @@ export default function Create() {
   }
 
   return (
-    <div className="create">
-      <h2 className="page-title">Add a New Recipe</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Recipe title:</span>
-        </label>
-        <input
-          type="text"
-          onChange={(e) => setTitle(e.target.value)}
-          value={title}
-          required
-        />
-        <label>
-          <span>Recipe tagline</span>
-        </label>
-        <input
-          type="text"
-          onChange={(e) => setTagLine(e.target.value)}
-          value={tagLine}
-          required
-        />
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Create</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <div className="create">
+        <h2 className="page-title">Add a New Recipe</h2>
+        <form onSubmit={handleSubmit}>
+          <label>
+            <span>Recipe title:</span>
+          </label>
+          <input
+            type="text"
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+            required
+          />
+          <label>
+            <span>Recipe tagline</span>
+          </label>
+          <input
+            type="text"
+            onChange={(e) => setTagLine(e.target.value)}
+            value={tagLine}
+            required
+          />
 
-        {/* ingredients go here */}
-        <label>
-          <span>Recipe Ingredients:</span>
-          <div className="ingredients">
-            <input
-              type="text"
-              onChange={(e) => setNewIngredient(e.target.value)}
-              value={newIngredient}
-            />
-            <button className="button" onClick={handleAdd}>
-              Add
-            </button>
-          </div>
-        </label>
-        {/* maps through ing and add , to each when displayed */}
-        <p>
-          Current ingredients:
-          {ingredients.map((i) => (
-            <em key={i}>{i}, </em>
-          ))}
-        </p>
+          {/* ingredients go here */}
+          <label>
+            <span>Recipe Ingredients:</span>
+            <div className="ingredients">
+              <input
+                type="text"
+                onChange={(e) => setNewIngredient(e.target.value)}
+                value={newIngredient}
+              />
+              <button className="button" onClick={handleAdd}>
+                Add
+              </button>
+            </div>
+          </label>
+          {/* maps through ing and add , to each when displayed */}
+          <p>
+            Current ingredients:
+            {ingredients.map((i) => (
+              <em key={i}>{i}, </em>
+            ))}
+          </p>
 
-        <label>
-          <span>Recipe method:</span>
-        </label>
-        <textarea
-          onChange={(e) => setMethod(e.target.value)}
-          value={method}
-          required
-        />
-        <label>
-          <span>Cooking time (minutes):</span>
-        </label>
-        <input
-          type="number"
-          onChange={(e) => setCookingTime(e.target.value)}
-          value={cookingTime}
-          required
-        />
-        <button className="button">Submit</button>
-      </form>
-    </div>
+          <label>
+            <span>Recipe method:</span>
+          </label>
+          <textarea
+            onChange={(e) => setMethod(e.target.value)}
+            value={method}
+            required
+          />
+          <label>
+            <span>Cooking time (minutes):</span>
+          </label>
+          <input
+            type="number"
+            onChange={(e) => setCookingTime(e.target.value)}
+            value={cookingTime}
+            required
+          />
+          <button className="button">Submit</button>
+        </form>
+      </div>
+    </>
   );
 }

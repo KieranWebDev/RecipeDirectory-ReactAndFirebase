@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { projectFireStore } from '../../assets/firebase/config';
-
+import { Helmet } from 'react-helmet';
 //components
 import RecipeList from '../../components/RecipeList/RecipeList';
 
@@ -50,10 +50,17 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="home">
-      {error && <p className="error">{error}</p>}
-      {isPending && <p className="loading">Loading...</p>}
-      {data && <RecipeList recipes={data} />}
-    </div>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Kieran's Recipe'sHome page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <div className="home">
+        {error && <p className="error">{error}</p>}
+        {isPending && <p className="loading">Loading...</p>}
+        {data && <RecipeList recipes={data} />}
+      </div>
+    </>
   );
 }

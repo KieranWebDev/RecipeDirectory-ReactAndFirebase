@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import { useEffect, useState } from 'react';
 import { projectFireStore } from '../../assets/firebase/config';
+import { Helmet } from 'react-helmet';
 
 //styles
 import './recipe.css';
@@ -42,22 +43,29 @@ export default function Recipe() {
   }
 
   return (
-    <div className={`recipe ${mode}`}>
-      {isPending && <p className="loading">loading...</p>}
-      {error && <p className="error">sorry, no data</p>}
-      {recipe && (
-        <div>
-          <h2 className="page-title"> {recipe.title}</h2>
-          <p>Takes {recipe.cookingTime} to cook.</p>
-          <ul>
-            {recipe.ingredients.map((ing) => (
-              <li key={ing}>{ing}</li>
-            ))}
-          </ul>
-          <p className={`recipe ${mode}`}>{recipe.method}</p>
-          {/* <button onClick={handleClick}>Update me</button> */}
-        </div>
-      )}
-    </div>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Recipe</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <div className={`recipe ${mode}`}>
+        {isPending && <p className="loading">loading...</p>}
+        {error && <p className="error">sorry, no data</p>}
+        {recipe && (
+          <div>
+            <h2 className="page-title"> {recipe.title}</h2>
+            <p>Takes {recipe.cookingTime} to cook.</p>
+            <ul>
+              {recipe.ingredients.map((ing) => (
+                <li key={ing}>{ing}</li>
+              ))}
+            </ul>
+            <p className={`recipe ${mode}`}>{recipe.method}</p>
+            {/* <button onClick={handleClick}>Update me</button> */}
+          </div>
+        )}
+      </div>
+    </>
   );
 }
